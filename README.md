@@ -1,111 +1,57 @@
-# Software FJ | Programación - Fase 4
+# Software FJ - Programación Fase 4
 
-**Universidad Nacional Abierta y a Distancia (UNAD)**  
-**Curso:** Programación 213023 · **Grupo:** 213023A_2204  
 **Estudiante:** Johan Sebastian Montagut Vargas  
+**Curso:** Programación 213023  
+**Grupo:** 213023A_2204  
 **Tutora:** VIKY ERIKA SANTANILLA PARRA
 
-## ¿De qué trata el proyecto?
+## Mi proyecto
 
-Software FJ es el caso planteado en el Anexo 3 de la Fase 4. La aplicación permite registrar clientes, ofrecer tres servicios (salas, equipos y asesorías) y crear reservas desde un menú de consola.
+Para esta fase desarrollé Software FJ, un programa de consola en Python con el que puedo registrar clientes, administrar salas, equipos y asesorías, y gestionar sus reservas. Separé el trabajo en clases para que el código fuera más fácil de entender y mantener.
 
-La idea principal es que el programa no se cierre cuando alguien ingresa un dato equivocado o intenta realizar una operación que no corresponde. Por ejemplo, si la sala ya está ocupada, el sistema rechaza la nueva confirmación, registra el motivo y permite continuar con otra opción.
+Me concentré en el manejo de errores. Si ingreso un dato inválido, intento registrar algo repetido o confirmo una reserva cuando el servicio está ocupado, el sistema me muestra el problema, lo guarda en el registro de eventos y me permite seguir trabajando sin cerrar la aplicación.
 
-Está desarrollado en Python con programación orientada a objetos. Los clientes, servicios y reservas se guardan en listas mientras el programa está abierto, **sin utilizar bases de datos**.
+## Cómo lo ejecuto
 
-## Cómo ejecutarlo
-
-Se necesita Python 3.10 o superior, sin instalar paquetes adicionales. Desde la carpeta principal del proyecto:
+Utilizo Python 3.10 o una versión superior. No necesito instalar librerías adicionales. Abro una terminal en la carpeta principal y ejecuto:
 
 ```bash
 python main.py
 ```
 
-Con ese comando se abre el menú. Para revisar las operaciones de ejemplo y comprobar las pruebas se utilizan:
+Para reproducir los casos de prueba y comprobar los resultados, uso:
 
 ```bash
 python main.py --demo
 python -m unittest discover -s tests -v
 ```
 
-En Windows también se puede usar `py` y, si el sistema lo requiere, `python3` en Linux o macOS.
+El programa guarda la información en memoria mientras está abierto. Cuando lo cierro, los registros se pierden, porque esta práctica no incluye una base de datos.
 
-La demostración inicia con datos ficticios. Si se cierra la aplicación, las listas se vacían; esto es normal porque el ejercicio no utiliza almacenamiento permanente.
+## Qué implementé
 
-## Qué permite hacer
+- Creé las clases de clientes, servicios y reservas. Para los servicios utilicé herencia y polimorfismo con `Sala`, `Equipo` y `Asesoria`.
+- Validé datos, duración, disponibilidad y cambios de estado de las reservas.
+- Implementé excepciones propias, bloques `try/except/else/finally` y encadenamiento con `raise ... from`.
+- Registré operaciones y errores con `logging`. El archivo se genera en `logs/software_fj.log` cuando ejecuto el programa.
+- Preparé una simulación con 29 operaciones, de las cuales 18 terminan correctamente y 11 producen errores controlados que se esperan en la prueba.
+- Ejecuté 22 pruebas automatizadas para revisar cálculos, validaciones, reservas, excepciones y continuidad del sistema.
 
-Primero se registra un cliente y uno de los tres servicios. Después se crea una reserva con las horas de uso y se confirma. Cuando se confirma correctamente, el servicio queda ocupado hasta que la reserva se procese o cancele.
+## Archivos del proyecto
 
-Para repetir una reserva completa en el menú se pueden usar estos datos de ejemplo:
-
-| Paso | Datos |
+| Archivo o carpeta | Contenido |
 |---|---|
-| 1. Cliente | `C1`, Cliente de prueba, `uno@example.com`, `3000000001` |
-| 2. Servicio | Sala `S1`, tarifa `50000`, capacidad `12` |
-| 3. Reserva | `R1`, cliente `C1`, sala `S1`, duración `2` horas |
-| 4. Confirmación | Impuesto `0.19` y descuento `0.10` |
-| 5. Resultado | Total `107100.00` COP. Luego se puede procesar la reserva |
+| `main.py` | Menú principal y demostración |
+| `software_fj/` | Clases, validaciones, gestión de reservas y excepciones |
+| `tests/` | Pruebas automatizadas |
+| `evidencias/` | Salidas de las pruebas, simulaciones y registros de eventos |
+| `documentacion/` | Mi informe de la Fase 4 en PDF y Word |
+| `.github/workflows/` | Comprobación automática de las pruebas en GitHub |
 
-El 19 % y las tarifas se utilizan solo para comprobar los cálculos. No representan una decisión tributaria ni precios reales de una empresa.
+Los archivos de `evidencias/` muestran los resultados que obtuve. También puedo repetir las pruebas con los comandos anteriores. Los porcentajes y las tarifas de ejemplo se usan únicamente para comprobar las operaciones del ejercicio.
 
-## Cómo está organizado el código
+## Informe
 
-| Archivo | Contenido |
-|---|---|
-| `main.py` | Menú y acceso a la demostración |
-| `software_fj/modelos.py` | Clientes, servicios, reservas y reglas de estado |
-| `software_fj/errores.py` | Excepciones propias del proyecto |
-| `software_fj/gestion.py` | Gestión de listas, manejo de errores y registros |
-| `software_fj/demo.py` | Simulación de 29 operaciones |
-| `tests/test_sistema.py` | 22 pruebas automatizadas |
-| `evidencias/` | Resultados guardados de las ejecuciones y del menú |
-| `documentacion/` | Informe académico en PDF y Word |
+Mi informe se encuentra en [documentacion](documentacion/), con el nombre `FASE_4_JOHAN_MONTAGUT_213023A_2204` en PDF y Word. Allí expliqué el diseño, el control de errores, las simulaciones y las conclusiones.
 
-Se usan clases abstractas, herencia, encapsulación y polimorfismo. La clase `Servicio` establece lo que todos los servicios deben implementar, mientras que `Sala`, `Equipo` y `Asesoria` calculan sus costos según sus propias reglas.
-
-Como el anexo no establece tarifas ni duraciones máximas, se adoptaron estos límites para el ejercicio: sala hasta 12 horas; equipo hasta 24 horas; asesoría entre 1 y 8 horas. Los cálculos se realizan con `Decimal` y se redondean a dos decimales.
-
-La fórmula utilizada es: **total = costo base × (1 − descuento) × (1 + impuesto)**. El método permite dejar el impuesto y el descuento como parámetros opcionales.
-
-## Qué pasa cuando hay un error
-
-Se crearon excepciones personalizadas para datos inválidos, duplicados, registros no encontrados, servicios ocupados, transiciones de reserva incorrectas y errores de cálculo.
-
-`Sistema.ejecutar()` contiene los bloques `try`, `except`, `else` y `finally` para controlar cada operación. También se utiliza `raise ... from` para conservar la causa original. Esto permite mostrar un mensaje, dejar constancia del error y continuar usando el menú.
-
-Las operaciones y sus trazas se registran normalmente en `logs/software_fj.log`, que se crea al ejecutar el programa. Como la carpeta de logs se excluye de Git para evitar archivos cambiantes, la evidencia compartida está en `evidencias/registro_simulacion.txt`. Si no se puede escribir el archivo, el programa lo advierte y muestra el evento en consola.
-
-## Resultados comprobados
-
-En la simulación se ejecutaron **29 operaciones**: 18 terminaron con éxito y 11 tuvieron un rechazo esperado. Entre las situaciones probadas están los datos inválidos, un servicio ocupado, una reserva ya cancelada y un error aritmético provocado. Después de este último, el programa pudo continuar con una consulta normal.
-
-Las **22 pruebas automáticas** finalizaron correctamente. Se pueden consultar sus resultados en `evidencias/pruebas.txt` o volver a ejecutarlas con el comando indicado arriba.
-
-También hay un flujo de GitHub Actions en `.github/workflows/pruebas.yml`, que comprueba el proyecto cuando se suben cambios y cuando se abre un pull request.
-
-## Trabajo colaborativo
-
-La guía establece que la actividad es colaborativa. Este repositorio tiene una plantilla de issues, una plantilla para pull requests y un archivo `CONTRIBUYENDO.md` para organizar el trabajo de los integrantes.
-
-Es importante distinguir la organización del repositorio de la participación real del grupo: **los archivos y plantillas por sí solos no demuestran que hayan participado cinco estudiantes**. Esa parte debe comprobarse con contribuciones propias, revisiones y cambios identificables de cada persona.
-
-## Enlace y documento para entregar
-
-- **Repositorio:** https://github.com/johanxsv-ui/software-fj-fase-4
-- **Historial de cambios:** https://github.com/johanxsv-ui/software-fj-fase-4/commits/main
-- **Pruebas en GitHub:** https://github.com/johanxsv-ui/software-fj-fase-4/actions
-- **Informe PDF:** `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.pdf`
-- **Informe Word:** `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.docx`
-
-La entrega del aula requiere el **PDF**; el enlace del repositorio debe compartirse en el foro, como indica la guía de Fase 4. El ZIP se proporciona como respaldo, no como sustituto del informe.
-
-## Referencias consultadas
-
-- Universidad Nacional Abierta y a Distancia. (2026). *Guía para el desarrollo del componente práctico: Fase 4, prácticas simuladas*. Material del curso Programación 213023.
-- Universidad Nacional Abierta y a Distancia. (s. f.). *Anexo 3: Problema a desarrollar, Fase 4*. Material del curso Programación 213023.
-- Python Software Foundation. (s. f.). [Errores y excepciones](https://docs.python.org/es/3.12/tutorial/errors.html).
-- Python Software Foundation. (s. f.). [Módulo logging](https://docs.python.org/es/3.12/library/logging.html).
-- Python Software Foundation. (s. f.). [Módulo abc](https://docs.python.org/es/3.12/library/abc.html).
-- Python Software Foundation. (s. f.). [Módulo decimal](https://docs.python.org/es/3.12/library/decimal.html).
-
-En la preparación y revisión se utilizaron herramientas digitales, incluida inteligencia artificial. Las pruebas y el funcionamiento pueden verificarse directamente con el código.
+El repositorio permite consultar mi trabajo y el historial de cambios. Para el componente colaborativo de la actividad, cualquier aporte de otro integrante debe quedar registrado con sus propios cambios en GitHub.
