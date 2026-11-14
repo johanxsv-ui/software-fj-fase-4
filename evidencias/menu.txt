@@ -1,0 +1,44 @@
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: Opción inválida; elija de 0 a 7.
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: ID: Nombre: Correo: Teléfono: No se completó: Opción 1. Correo: formato inválido.
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: ID: Nombre: Correo: Teléfono: Operación completada: Opción 1.
+C9 | Prueba manual
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: Tipo (1 sala, 2 equipo, 3 asesoría): ID: Nombre: Tarifa por hora COP: Capacidad: No se completó: Opción 2. invalid literal for int() with base 10: 'diez'
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: Tipo (1 sala, 2 equipo, 3 asesoría): ID: Nombre: Tarifa por hora COP: Capacidad: Operación completada: Opción 2.
+S9 | Sala Sala | aforo 10 | 50000 COP/h
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: ID reserva: ID cliente: ID servicio: Horas: Operación completada: Opción 3.
+R9 | C9 | S9 | 2 h | PENDIENTE | None COP
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: ID reserva: Impuesto fracción (Enter=0): Descuento fracción (Enter=0): Operación completada: Opción 4.
+107100.00
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: ID reserva: Operación completada: Opción 5.
+107100.00
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: 
+CLIENTES
+C9 | Prueba manual
+
+SERVICIOS
+S9 | Sala Sala | aforo 10 | 50000 COP/h
+
+RESERVAS
+R9 | C9 | S9 | 2 h | COMPLETADA | 107100.00 COP
+Operación completada: Opción 7.
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 0 Salir
+Seleccione: 

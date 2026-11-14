@@ -1,0 +1,48 @@
+01 | ÉXITO | Cliente válido C1 | VERIFICADO
+      C1 | Cliente de prueba uno
+02 | ERROR CONTROLADO | Correo inválido | VERIFICADO
+03 | ERROR CONTROLADO | Cliente duplicado | VERIFICADO
+04 | ERROR CONTROLADO | Parámetros faltantes | VERIFICADO
+05 | ÉXITO | Cliente válido C2 | VERIFICADO
+      C2 | Cliente de prueba dos
+06 | ÉXITO | Crear sala S1 | VERIFICADO
+      S1 | Sala Sala de reuniones | aforo 12 | 50000 COP/h
+07 | ERROR CONTROLADO | Servicio con tarifa negativa | VERIFICADO
+08 | ÉXITO | Crear equipo E1 | VERIFICADO
+      E1 | Equipo Proyector | 20000 COP/h + 5000 COP
+09 | ÉXITO | Crear asesoría A1 | VERIFICADO
+      A1 | Asesoría Redes | 80000 COP/h x 1.5
+10 | ERROR CONTROLADO | Servicio sin especialidad | VERIFICADO
+11 | ÉXITO | Crear reserva R1 | VERIFICADO
+      R1 | C1 | S1 | 2 h | PENDIENTE | None COP
+12 | ÉXITO | Confirmar R1 con impuesto y descuento | VERIFICADO
+      107100.00
+13 | ÉXITO | Crear reserva competidora R2 | VERIFICADO
+      R2 | C2 | S1 | 1 h | PENDIENTE | None COP
+14 | ERROR CONTROLADO | Confirmar servicio ocupado | VERIFICADO
+15 | ERROR CONTROLADO | Cliente inexistente | VERIFICADO
+16 | ERROR CONTROLADO | Duración inválida | VERIFICADO
+17 | ÉXITO | Procesar R1 | VERIFICADO
+      107100.00
+18 | ÉXITO | Confirmar R2 tras liberación | VERIFICADO
+      50000.00
+19 | ÉXITO | Cancelar R2 | VERIFICADO
+      CANCELADA
+20 | ERROR CONTROLADO | Procesar reserva cancelada | VERIFICADO
+21 | ÉXITO | Crear reserva de equipo R3 | VERIFICADO
+      R3 | C1 | E1 | 3 h | PENDIENTE | None COP
+22 | ÉXITO | Confirmar R3 | VERIFICADO
+      65000.00
+23 | ÉXITO | Procesar R3 | VERIFICADO
+      65000.00
+24 | ÉXITO | Crear reserva de asesoría R4 | VERIFICADO
+      R4 | C2 | A1 | 2 h | PENDIENTE | None COP
+25 | ERROR CONTROLADO | Confirmar R4 con descuento inválido | VERIFICADO
+26 | ÉXITO | Confirmar R4 después del error | VERIFICADO
+      240000.00
+27 | ÉXITO | Procesar R4 | VERIFICADO
+      240000.00
+28 | ERROR CONTROLADO | Falla inesperada controlada | VERIFICADO
+29 | ÉXITO | Consulta final tras los errores | VERIFICADO
+      4
+RESUMEN: 29/29 resultados esperados.

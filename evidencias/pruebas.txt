@@ -1,0 +1,27 @@
+test_abstraccion (test_sistema.PruebasSistema.test_abstraccion) ... ok
+test_calculo_inconsistente (test_sistema.PruebasSistema.test_calculo_inconsistente) ... ok
+test_cancelacion_confirmada_libera (test_sistema.PruebasSistema.test_cancelacion_confirmada_libera) ... ok
+test_cancelacion_pendiente_no_libera_otra (test_sistema.PruebasSistema.test_cancelacion_pendiente_no_libera_otra) ... ok
+test_contacto_atomico (test_sistema.PruebasSistema.test_contacto_atomico) ... ok
+test_datos_cliente_invalidos (test_sistema.PruebasSistema.test_datos_cliente_invalidos) ... ok
+test_demo_completa (test_sistema.PruebasSistema.test_demo_completa) ... ok
+test_descuento_total_y_redondeo (test_sistema.PruebasSistema.test_descuento_total_y_redondeo) ... ok
+test_doble_reserva_y_recuperacion (test_sistema.PruebasSistema.test_doble_reserva_y_recuperacion) ... ok
+test_duplicado_no_muta_lista (test_sistema.PruebasSistema.test_duplicado_no_muta_lista) ... ok
+test_error_confirmacion_no_ocupa (test_sistema.PruebasSistema.test_error_confirmacion_no_ocupa) ... ok
+test_estados_finales (test_sistema.PruebasSistema.test_estados_finales) ... ok
+test_excepcion_inesperada (test_sistema.PruebasSistema.test_excepcion_inesperada) ... ok
+test_faltantes_y_log_encadenado (test_sistema.PruebasSistema.test_faltantes_y_log_encadenado) ... ok
+test_identidad_encapsulada (test_sistema.PruebasSistema.test_identidad_encapsulada) ... ok
+test_limites_duracion (test_sistema.PruebasSistema.test_limites_duracion) ... ok
+test_log_sin_permiso (test_sistema.PruebasSistema.test_log_sin_permiso) ... ok
+test_numeros_no_finitos (test_sistema.PruebasSistema.test_numeros_no_finitos) ... ok
+test_parametros_especializados (test_sistema.PruebasSistema.test_parametros_especializados) ... ok
+test_polimorfismo (test_sistema.PruebasSistema.test_polimorfismo) ... ok
+test_procesar_pendiente (test_sistema.PruebasSistema.test_procesar_pendiente) ... ok
+test_variantes_calculo (test_sistema.PruebasSistema.test_variantes_calculo) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.012s
+
+OK
