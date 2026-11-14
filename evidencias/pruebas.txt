@@ -22,6 +22,6 @@ test_procesar_pendiente (test_sistema.PruebasSistema.test_procesar_pendiente) ..
 test_variantes_calculo (test_sistema.PruebasSistema.test_variantes_calculo) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.017s
+Ran 22 tests in 0.015s
 
 OK
