@@ -1,6 +1,6 @@
 # Trabajo colaborativo - Programación Fase 4
 
-Este proyecto fue preparado inicialmente por Johan Sebastian Montagut Vargas. No se atribuyen contribuciones a otras personas sin evidencia.
+Este proyecto fue preparado inicialmente por Johan Sebastian Montagut Vargas. No se atribuyen contribuciones a otras personas sin evidencia, ya que no participaron mis compañeros.
 
 ## Flujo propuesto para el grupo
 
@@ -16,4 +16,4 @@ Este proyecto fue preparado inicialmente por Johan Sebastian Montagut Vargas. No
 - `python -m unittest discover -s tests -v`
 - `python main.py --demo`
 
-El trabajo colaborativo que exige la rúbrica no queda acreditado por la existencia de este documento: hacen falta contribuciones efectivas de los integrantes.
+El trabajo colaborativo que exige la rúbrica no queda acreditado por la existencia de este documento: hacen falta contribuciones efectivas de mis compañeros.
