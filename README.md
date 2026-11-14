@@ -75,17 +75,19 @@ El programa solo escribe archivos para eventos y errores. Los `.txt` de evidenci
 - Costos: R1 = 107100.00; R2 = 50000.00 (cancelada, no se suma a prestaciones completadas); R3 = 65000.00; R4 = 240000.00 COP.
 - Total de prestaciones completadas: 412100.00 COP. Es una suma de simulación, no ingresos ni pagos reales.
 
-## Publicación y colaboración en GitHub
+## Identificación académica y publicación
 
-El repositorio GitHub ya está publicado. La entrega en el campus o foro UNAD corresponde al estudiante. La guía exige ambas acciones y aunque se confirmó la conexión de GitHub, sus operaciones de repositorio no quedaron disponibles en esta sesión; tampoco existe autenticación activa en la consola ni en el navegador de trabajo. El proyecto está preparado para cargarse sin modificaciones funcionales.
+- **Estudiante:** Johan Sebastian Montagut Vargas
+- **Curso:** Programación (213023)
+- **Grupo:** `213023A_2204`
+- **Tutora:** VIKY ERIKA SANTANILLA PARRA
+- **Documento PDF:** `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.pdf`
+- **Documento Word:** `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.docx`
+- **Repositorio:** https://github.com/johanxsv-ui/software-fj-fase-4
+- **Rama principal:** `main`
+- **Historial de commits:** https://github.com/johanxsv-ui/software-fj-fase-4/commits/main
 
-1. Cree un repositorio `software-fj-fase4` en su cuenta de GitHub; configure acceso para que el tutor pueda revisarlo.
-2. Suba `main.py`, `README.md`, `.gitignore`, las carpetas `software_fj`, `tests` y `evidencias`. Las evidencias solo contienen datos ficticios. Puede añadir el log de muestra si se solicita; no incluya contactos reales en un repositorio público.
-3. Abra el repositorio y compruebe que aparecen archivos y carpetas en la raíz correcta.
-4. Copie la URL real y sustitúyala en la sección de repositorio del Word. Exporte nuevamente a PDF.
-5. Comparta el enlace en el foro y entregue el PDF en el entorno de evaluación.
-
-No se inventó un historial de commits ni la participación de otros integrantes. La guía define actividad colaborativa para cinco estudiantes; este paquete desarrolla la solución técnica con un solo autor identificado, sin afirmar que exista autorización institucional para sustituir el componente colaborativo.
+El proyecto está publicado. Para entregar la actividad ante la UNAD, se debe aportar el PDF y el enlace en el espacio que corresponda. La participación colaborativa debe demostrarse con aportes reales de los integrantes, no solo con plantillas o archivos preparados.
 
 ## Fuentes
 
@@ -107,3 +109,12 @@ GitHub Actions está configurado para ejecutar sintaxis, 22 pruebas y 29 simulac
 https://github.com/johanxsv-ui/software-fj-fase-4
 
 La existencia de este repositorio no acredita por sí sola participación colaborativa de cinco estudiantes: se requieren commits, ramas, PR e issues reales de los integrantes.
+
+## Informe final para evaluación
+
+- `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.pdf`
+- `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.docx`
+- Grupo: `213023A_2204`
+- Tutora: VIKY ERIKA SANTANILLA PARRA
+- Repositorio: https://github.com/johanxsv-ui/software-fj-fase-4
+

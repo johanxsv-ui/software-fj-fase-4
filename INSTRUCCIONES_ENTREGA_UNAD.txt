@@ -1,0 +1,17 @@
+PROGRAMACIÓN - FASE 4 - UNAD
+Estudiante: Johan Sebastian Montagut Vargas
+Grupo: 213023A_2204
+Tutora: VIKY ERIKA SANTANILLA PARRA
+Curso: Programación (213023)
+
+DOCUMENTOS:
+- documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.pdf
+- documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.docx
+
+REPOSITORIO: https://github.com/johanxsv-ui/software-fj-fase-4
+HISTORIAL: https://github.com/johanxsv-ui/software-fj-fase-4/commits/main
+
+ENTREGA: Adjunte el informe PDF al espacio indicado en la UNAD y publique el enlace del repositorio cuando lo requiera la guía. El trabajo colaborativo necesita aportes auténticos de los integrantes.
+
+PRUEBAS: python -m unittest discover -s tests -v
+SIMULACIÓN: python main.py --demo

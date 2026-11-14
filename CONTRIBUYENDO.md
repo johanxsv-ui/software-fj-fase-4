@@ -1,5 +1,8 @@
 # Trabajo colaborativo - Programación Fase 4
 
+**Grupo:** 213023A_2204  
+**Tutora:** VIKY ERIKA SANTANILLA PARRA
+
 Este proyecto fue preparado inicialmente por Johan Sebastian Montagut Vargas. No se atribuyen contribuciones a otras personas sin evidencia, ya que no participaron mis compañeros.
 
 ## Flujo propuesto para el grupo
