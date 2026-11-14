@@ -75,9 +75,9 @@ El programa solo escribe archivos para eventos y errores. Los `.txt` de evidenci
 - Costos: R1 = 107100.00; R2 = 50000.00 (cancelada, no se suma a prestaciones completadas); R3 = 65000.00; R4 = 240000.00 COP.
 - Total de prestaciones completadas: 412100.00 COP. Es una suma de simulación, no ingresos ni pagos reales.
 
-## Publicación y colaboración en GitHub (pendientes de completar)
+## Publicación y colaboración en GitHub
 
-El repositorio remoto aún no está creado ni se publicó en el foro. La guía exige ambas acciones y aunque se confirmó la conexión de GitHub, sus operaciones de repositorio no quedaron disponibles en esta sesión; tampoco existe autenticación activa en la consola ni en el navegador de trabajo. El proyecto está preparado para cargarse sin modificaciones funcionales.
+El repositorio GitHub ya está publicado. La entrega en el campus o foro UNAD corresponde al estudiante. La guía exige ambas acciones y aunque se confirmó la conexión de GitHub, sus operaciones de repositorio no quedaron disponibles en esta sesión; tampoco existe autenticación activa en la consola ni en el navegador de trabajo. El proyecto está preparado para cargarse sin modificaciones funcionales.
 
 1. Cree un repositorio `software-fj-fase4` en su cuenta de GitHub; configure acceso para que el tutor pueda revisarlo.
 2. Suba `main.py`, `README.md`, `.gitignore`, las carpetas `software_fj`, `tests` y `evidencias`. Las evidencias solo contienen datos ficticios. Puede añadir el log de muestra si se solicita; no incluya contactos reales en un repositorio público.
@@ -100,4 +100,10 @@ El código es una solución preparada con asistencia de inteligencia artificial 
 
 ## Verificación continua y aportes del grupo
 
-Al publicar el repositorio, GitHub Actions ejecutará sintaxis, 22 pruebas y 29 simulaciones en cada push y pull request mediante `.github/workflows/pruebas.yml`. Incluye `CONTRIBUYENDO.md`, plantilla de tarea y plantilla de pull request para organizar el trabajo posterior. Estos archivos son preparación, no evidencia de trabajo conjunto ya realizado.
+GitHub Actions está configurado para ejecutar sintaxis, 22 pruebas y 29 simulaciones en cada push y pull request mediante `.github/workflows/pruebas.yml`. Incluye `CONTRIBUYENDO.md`, plantilla de tarea y plantilla de pull request para organizar el trabajo posterior. Estos archivos son preparación, no evidencia de trabajo conjunto ya realizado.
+
+## Enlace del repositorio publicado
+
+https://github.com/johanxsv-ui/software-fj-fase-4
+
+La existencia de este repositorio no acredita por sí sola participación colaborativa de cinco estudiantes: se requieren commits, ramas, PR e issues reales de los integrantes.
