@@ -1,120 +1,111 @@
-# Software FJ — Fase 4 de Programación 213023
+# Software FJ | Programación - Fase 4
 
-Proyecto académico para gestionar clientes, salas, equipos, asesorías y reservas mediante programación orientada a objetos. Solo usa la biblioteca estándar de Python. No requiere bases de datos, servicios externos ni instalación de paquetes.
+**Universidad Nacional Abierta y a Distancia (UNAD)**  
+**Curso:** Programación 213023 · **Grupo:** 213023A_2204  
+**Estudiante:** Johan Sebastian Montagut Vargas  
+**Tutora:** VIKY ERIKA SANTANILLA PARRA
 
-## Ejecución rápida
+## ¿De qué trata el proyecto?
 
-Requisito: Python 3.10 o posterior. Verificado con Python 3.12.14.
+Software FJ es el caso planteado en el Anexo 3 de la Fase 4. La aplicación permite registrar clientes, ofrecer tres servicios (salas, equipos y asesorías) y crear reservas desde un menú de consola.
 
-1. Descomprima el proyecto y abra una terminal dentro de la carpeta `Software_FJ`.
-2. Ejecute `python main.py --demo` para reproducir las 29 operaciones.
-3. Ejecute `python main.py` para utilizar el menú interactivo.
-4. Ejecute `python -m unittest discover -s tests -v` para correr las 22 pruebas.
+La idea principal es que el programa no se cierre cuando alguien ingresa un dato equivocado o intenta realizar una operación que no corresponde. Por ejemplo, si la sala ya está ocupada, el sistema rechaza la nueva confirmación, registra el motivo y permite continuar con otra opción.
 
-En Windows puede sustituir `python` por `py`. En Linux/macOS puede usar `python3`. El programa empieza con listas vacías cada vez. La demo carga sus propios datos ficticios; no los conserva para otra ejecución.
+Está desarrollado en Python con programación orientada a objetos. Los clientes, servicios y reservas se guardan en listas mientras el programa está abierto, **sin utilizar bases de datos**.
 
-## Guion de uso del menú
+## Cómo ejecutarlo
 
-- Opción 1: cliente C1, nombre Cliente de prueba, correo uno@example.com y teléfono 3000000001.
-- Opción 2: tipo 1 (sala), ID S1, nombre Sala de reuniones, tarifa 50000 y capacidad 12.
-- Opción 3: reserva R1, cliente C1, servicio S1 y duración 2.
-- Opción 4: reserva R1, impuesto 0.19 y descuento 0.10. Total esperado: 107100.00 COP.
-- Opción 5: reserva R1. Queda COMPLETADA y se libera el recurso.
-- Opción 7: muestra las tres colecciones.
-- Opción 0: cierra la sesión.
+Se necesita Python 3.10 o superior, sin instalar paquetes adicionales. Desde la carpeta principal del proyecto:
 
-Use punto decimal, no separadores de miles. Los impuestos y descuentos se expresan como fracción: 0.19 equivale a 19 %. El 19 % es solo un parámetro didáctico, no una determinación tributaria del servicio.
+```bash
+python main.py
+```
 
-## Estructura
+Con ese comando se abre el menú. Para revisar las operaciones de ejemplo y comprobar las pruebas se utilizan:
 
-| Archivo | Responsabilidad |
+```bash
+python main.py --demo
+python -m unittest discover -s tests -v
+```
+
+En Windows también se puede usar `py` y, si el sistema lo requiere, `python3` en Linux o macOS.
+
+La demostración inicia con datos ficticios. Si se cierra la aplicación, las listas se vacían; esto es normal porque el ejercicio no utiliza almacenamiento permanente.
+
+## Qué permite hacer
+
+Primero se registra un cliente y uno de los tres servicios. Después se crea una reserva con las horas de uso y se confirma. Cuando se confirma correctamente, el servicio queda ocupado hasta que la reserva se procese o cancele.
+
+Para repetir una reserva completa en el menú se pueden usar estos datos de ejemplo:
+
+| Paso | Datos |
 |---|---|
-| main.py | Menú y selección de modo demo |
-| software_fj/modelos.py | Entidades, validación, servicios, costos y estados |
-| software_fj/errores.py | Excepciones personalizadas |
-| software_fj/gestion.py | Listas en memoria, operaciones protegidas y logs |
-| software_fj/demo.py | 29 operaciones secuenciales con resultado esperado |
-| tests/test_sistema.py | 22 pruebas automatizadas con casos adicionales |
-| evidencias/simulacion.txt | Salida real de la simulación |
-| evidencias/pruebas.txt | Salida real de unittest |
-| evidencias/menu.txt | Salida real de una sesión automatizada del menú |
-| logs/software_fj.log | Eventos y trazas reales de la ejecución |
+| 1. Cliente | `C1`, Cliente de prueba, `uno@example.com`, `3000000001` |
+| 2. Servicio | Sala `S1`, tarifa `50000`, capacidad `12` |
+| 3. Reserva | `R1`, cliente `C1`, sala `S1`, duración `2` horas |
+| 4. Confirmación | Impuesto `0.19` y descuento `0.10` |
+| 5. Resultado | Total `107100.00` COP. Luego se puede procesar la reserva |
 
-Las instrucciones ejecutables están comentadas línea por línea. Las pruebas también incluyen comentarios. Las líneas de documentación, en blanco o de cierre se explican mediante su contexto.
+El 19 % y las tarifas se utilizan solo para comprobar los cálculos. No representan una decisión tributaria ni precios reales de una empresa.
 
-## Modelo y reglas adoptadas
+## Cómo está organizado el código
 
-El anexo no fija tarifas, duración máxima ni política de ocupación. Se adoptan estas reglas para la simulación:
+| Archivo | Contenido |
+|---|---|
+| `main.py` | Menú y acceso a la demostración |
+| `software_fj/modelos.py` | Clientes, servicios, reservas y reglas de estado |
+| `software_fj/errores.py` | Excepciones propias del proyecto |
+| `software_fj/gestion.py` | Gestión de listas, manejo de errores y registros |
+| `software_fj/demo.py` | Simulación de 29 operaciones |
+| `tests/test_sistema.py` | 22 pruebas automatizadas |
+| `evidencias/` | Resultados guardados de las ejecuciones y del menú |
+| `documentacion/` | Informe académico en PDF y Word |
 
-- Una instancia de servicio representa un único recurso. Puede existir más de una reserva pendiente; solo una puede confirmarse y ocupar ese recurso a la vez.
-- No se administra calendario ni concurrencia entre procesos. La ocupación dura desde la confirmación hasta la cancelación o el procesamiento.
-- Sala: más de 0 y hasta 12 horas; costo = tarifa × horas; capacidad entera de 1 a 500.
-- Equipo: más de 0 y hasta 24 horas; costo = tarifa × horas + cargo de preparación, por defecto 5000 COP.
-- Asesoría: de 1 a 8 horas; costo = tarifa × horas × factor; factor de 1 a 3.
-- Tarifa positiva, finita y hasta 100000000; costo base positivo y hasta el mismo límite.
-- Total = costo base × (1 − descuento) × (1 + impuesto), redondeado a dos decimales con ROUND_HALF_UP. Impuesto y descuento están entre 0 y 1.
-- `calcular_costo(horas)`, `calcular_costo(horas, impuesto)` y `calcular_costo(horas, impuesto, descuento)` son variantes mediante parámetros opcionales. Python no ofrece sobrecarga por cantidad de argumentos mediante definiciones repetidas; se aplica la alternativa de parámetros opcionales admitida por el anexo.
-- El costo se fija al confirmar. Procesar representa terminar la prestación; no ejecuta pagos ni integra una pasarela.
-- Estados: PENDIENTE permite confirmar o cancelar; CONFIRMADA permite procesar o cancelar; CANCELADA y COMPLETADA son finales.
-- Las listas internas no se exponen para inserción o borrado: las propiedades devuelven tuplas de referencias.
-- El correo se valida por formato básico, sin consultar si existe. Los teléfonos admiten 7 a 15 dígitos, con + inicial opcional.
+Se usan clases abstractas, herencia, encapsulación y polimorfismo. La clase `Servicio` establece lo que todos los servicios deben implementar, mientras que `Sala`, `Equipo` y `Asesoria` calculan sus costos según sus propias reglas.
 
-## Excepciones y estabilidad
+Como el anexo no establece tarifas ni duraciones máximas, se adoptaron estos límites para el ejercicio: sala hasta 12 horas; equipo hasta 24 horas; asesoría entre 1 y 8 horas. Los cálculos se realizan con `Decimal` y se redondean a dos decimales.
 
-La interfaz y la demo pasan cada operación por `Sistema.ejecutar`. Esta frontera registra errores, conserva la causa con `raise ... from`, devuelve un resultado controlado y usa `finally` para registrar el cierre. `Reserva.confirmar` usa `try/except/else` y solo cambia el estado después de calcular el importe y obtener el recurso.
+La fórmula utilizada es: **total = costo base × (1 − descuento) × (1 + impuesto)**. El método permite dejar el impuesto y el descuento como parámetros opcionales.
 
-Los métodos de dominio lanzan excepciones al consumidor. Si se utilizan desde otro programa, deben invocarse dentro de `Sistema.ejecutar` o de una frontera equivalente para que queden registradas. No se promete recuperar un cierre del sistema operativo, interrupción forzada, agotamiento de memoria o mutación deliberada de atributos privados.
+## Qué pasa cuando hay un error
 
-El programa solo escribe archivos para eventos y errores. Los `.txt` de evidencias se obtuvieron redirigiendo la salida de las ejecuciones, no son una persistencia de clientes o reservas. Los datos comerciales se pierden al cerrar. Si el archivo de log no puede abrirse o escribirse, se informa y se envía el evento a la salida de error; no se afirma que quedó guardado en disco.
+Se crearon excepciones personalizadas para datos inválidos, duplicados, registros no encontrados, servicios ocupados, transiciones de reserva incorrectas y errores de cálculo.
 
-## Resultados verificados
+`Sistema.ejecutar()` contiene los bloques `try`, `except`, `else` y `finally` para controlar cada operación. También se utiliza `raise ... from` para conservar la causa original. Esto permite mostrar un mensaje, dejar constancia del error y continuar usando el menú.
 
-- 29 de 29 escenarios con el comportamiento esperado: 18 éxitos y 11 errores controlados.
-- 22 pruebas automatizadas aprobadas; varias prueban múltiples entradas con subcasos.
-- Estado final de la demo: 2 clientes, 3 servicios y 4 reservas. R1, R3 y R4 completadas; R2 cancelada. Los tres servicios quedan libres.
-- Costos: R1 = 107100.00; R2 = 50000.00 (cancelada, no se suma a prestaciones completadas); R3 = 65000.00; R4 = 240000.00 COP.
-- Total de prestaciones completadas: 412100.00 COP. Es una suma de simulación, no ingresos ni pagos reales.
+Las operaciones y sus trazas se registran normalmente en `logs/software_fj.log`, que se crea al ejecutar el programa. Como la carpeta de logs se excluye de Git para evitar archivos cambiantes, la evidencia compartida está en `evidencias/registro_simulacion.txt`. Si no se puede escribir el archivo, el programa lo advierte y muestra el evento en consola.
 
-## Identificación académica y publicación
+## Resultados comprobados
 
-- **Estudiante:** Johan Sebastian Montagut Vargas
-- **Curso:** Programación (213023)
-- **Grupo:** `213023A_2204`
-- **Tutora:** VIKY ERIKA SANTANILLA PARRA
-- **Documento PDF:** `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.pdf`
-- **Documento Word:** `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.docx`
+En la simulación se ejecutaron **29 operaciones**: 18 terminaron con éxito y 11 tuvieron un rechazo esperado. Entre las situaciones probadas están los datos inválidos, un servicio ocupado, una reserva ya cancelada y un error aritmético provocado. Después de este último, el programa pudo continuar con una consulta normal.
+
+Las **22 pruebas automáticas** finalizaron correctamente. Se pueden consultar sus resultados en `evidencias/pruebas.txt` o volver a ejecutarlas con el comando indicado arriba.
+
+También hay un flujo de GitHub Actions en `.github/workflows/pruebas.yml`, que comprueba el proyecto cuando se suben cambios y cuando se abre un pull request.
+
+## Trabajo colaborativo
+
+La guía establece que la actividad es colaborativa. Este repositorio tiene una plantilla de issues, una plantilla para pull requests y un archivo `CONTRIBUYENDO.md` para organizar el trabajo de los integrantes.
+
+Es importante distinguir la organización del repositorio de la participación real del grupo: **los archivos y plantillas por sí solos no demuestran que hayan participado cinco estudiantes**. Esa parte debe comprobarse con contribuciones propias, revisiones y cambios identificables de cada persona.
+
+## Enlace y documento para entregar
+
 - **Repositorio:** https://github.com/johanxsv-ui/software-fj-fase-4
-- **Rama principal:** `main`
-- **Historial de commits:** https://github.com/johanxsv-ui/software-fj-fase-4/commits/main
+- **Historial de cambios:** https://github.com/johanxsv-ui/software-fj-fase-4/commits/main
+- **Pruebas en GitHub:** https://github.com/johanxsv-ui/software-fj-fase-4/actions
+- **Informe PDF:** `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.pdf`
+- **Informe Word:** `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.docx`
 
-El proyecto está publicado. Para entregar la actividad ante la UNAD, se debe aportar el PDF y el enlace en el espacio que corresponda. La participación colaborativa debe demostrarse con aportes reales de los integrantes, no solo con plantillas o archivos preparados.
+La entrega del aula requiere el **PDF**; el enlace del repositorio debe compartirse en el foro, como indica la guía de Fase 4. El ZIP se proporciona como respaldo, no como sustituto del informe.
 
-## Fuentes
+## Referencias consultadas
 
-- Universidad Nacional Abierta y a Distancia. (2026). Guía para el desarrollo del componente práctico — Fase 4 — Prácticas simuladas. Material suministrado del curso 213023.
-- Universidad Nacional Abierta y a Distancia. (s. f.). Anexo 3 — Problema a desarrollar Fase 4. Material suministrado del curso 213023.
-- Python Software Foundation. (s. f.). Errores y excepciones. https://docs.python.org/es/3.12/tutorial/errors.html
-- Python Software Foundation. (s. f.). abc — Abstract Base Classes. https://docs.python.org/es/3.12/library/abc.html
-- Python Software Foundation. (s. f.). decimal — Decimal fixed-point and floating-point arithmetic. https://docs.python.org/es/3.12/library/decimal.html
-- Python Software Foundation. (s. f.). logging — Logging facility for Python. https://docs.python.org/es/3.12/library/logging.html
+- Universidad Nacional Abierta y a Distancia. (2026). *Guía para el desarrollo del componente práctico: Fase 4, prácticas simuladas*. Material del curso Programación 213023.
+- Universidad Nacional Abierta y a Distancia. (s. f.). *Anexo 3: Problema a desarrollar, Fase 4*. Material del curso Programación 213023.
+- Python Software Foundation. (s. f.). [Errores y excepciones](https://docs.python.org/es/3.12/tutorial/errors.html).
+- Python Software Foundation. (s. f.). [Módulo logging](https://docs.python.org/es/3.12/library/logging.html).
+- Python Software Foundation. (s. f.). [Módulo abc](https://docs.python.org/es/3.12/library/abc.html).
+- Python Software Foundation. (s. f.). [Módulo decimal](https://docs.python.org/es/3.12/library/decimal.html).
 
-El código es una solución preparada con asistencia de inteligencia artificial para esta actividad. Debe revisarse y comprenderse antes de su sustentación; su uso debe ajustarse a las indicaciones del curso.
-
-## Verificación continua y aportes del grupo
-
-GitHub Actions está configurado para ejecutar sintaxis, 22 pruebas y 29 simulaciones en cada push y pull request mediante `.github/workflows/pruebas.yml`. Incluye `CONTRIBUYENDO.md`, plantilla de tarea y plantilla de pull request para organizar el trabajo posterior. Estos archivos son preparación, no evidencia de trabajo conjunto ya realizado.
-
-## Enlace del repositorio publicado
-
-https://github.com/johanxsv-ui/software-fj-fase-4
-
-La existencia de este repositorio no acredita por sí sola participación colaborativa de cinco estudiantes: se requieren commits, ramas, PR e issues reales de los integrantes.
-
-## Informe final para evaluación
-
-- `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.pdf`
-- `documentacion/FASE_4_JOHAN_MONTAGUT_213023A_2204.docx`
-- Grupo: `213023A_2204`
-- Tutora: VIKY ERIKA SANTANILLA PARRA
-- Repositorio: https://github.com/johanxsv-ui/software-fj-fase-4
-
+En la preparación y revisión se utilizaron herramientas digitales, incluida inteligencia artificial. Las pruebas y el funcionamiento pueden verificarse directamente con el código.

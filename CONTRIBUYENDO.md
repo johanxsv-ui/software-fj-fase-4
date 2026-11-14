@@ -1,22 +1,27 @@
-# Trabajo colaborativo - Programación Fase 4
+# Cómo trabajar en equipo en Software FJ
 
-**Grupo:** 213023A_2204  
+**Curso:** Programación 213023 · **Grupo:** 213023A_2204  
 **Tutora:** VIKY ERIKA SANTANILLA PARRA
 
-Este proyecto fue preparado inicialmente por Johan Sebastian Montagut Vargas. No se atribuyen contribuciones a otras personas sin evidencia, ya que no participaron mis compañeros.
+La guía de la Fase 4 pide que los cinco integrantes participen en el desarrollo del proyecto. Para que esa participación se pueda revisar en GitHub, cada persona debe trabajar desde su propia cuenta y dejar identificados sus cambios.
 
-## Flujo propuesto para el grupo
+## Pasos para hacer un aporte
 
-1. Cada estudiante recibe acceso al repositorio y crea su rama a partir de `main` (`feat/tema-nombre`).
-2. Cada cambio se explica en un issue con responsable y criterio de aceptación.
-3. El integrante realiza commits reales y descriptivos desde su rama.
-4. Se abre un pull request vinculado al issue, con pruebas y descripción.
-5. Otro integrante revisa, solicita cambios si hace falta y aprueba antes de fusionar.
-6. Se registran en el informe solo aportes demostrables mediante PR, commits y comentarios reales.
+1. Revisar el README y ejecutar el programa para conocer cómo funciona
+2. Crear o elegir una tarea en la sección **Issues** y explicar qué se va a revisar
+3. Crear una rama con un nombre sencillo, por ejemplo `pruebas/nuevos-casos` o `mejora/validaciones`
+4. Hacer cambios pequeños y registrar commits que expliquen qué se modificó
+5. Ejecutar `python -m unittest discover -s tests -v` y `python main.py --demo`
+6. Abrir un pull request hacia `main`, explicar la mejora y pedir revisión a otro integrante
+7. Incorporar las observaciones y completar la revisión antes de unir los cambios
 
-## Verificaciones
+Para el informe final, conviene guardar el enlace de cada issue, rama, commit y pull request que corresponda a las tareas reales de los compañeros. No basta con escribir el nombre de una persona en el documento si no existen aportes que puedan comprobarse.
 
-- `python -m unittest discover -s tests -v`
-- `python main.py --demo`
+## Temas que se pueden revisar
 
-El trabajo colaborativo que exige la rúbrica no queda acreditado por la existencia de este documento: hacen falta contribuciones efectivas de mis compañeros.
+- Casos adicionales de validación y recuperación de errores
+- Mensajes del menú que ayuden al usuario a corregir un dato
+- Consistencia entre los logs, las pruebas y los resultados de la simulación
+- Correcciones de documentación o mejoras de accesibilidad
+
+**Nota:** este archivo explica una forma de organizar el trabajo en grupo, pero no representa por sí solo evidencias de participación de cinco estudiantes. Los aportes deben aparecer realmente en el historial de GitHub.
