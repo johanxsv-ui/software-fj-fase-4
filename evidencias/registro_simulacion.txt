@@ -1,20 +1,19 @@
-2026-11-14 10:37:07,752 | INFO | OK | Cliente válido C1
-2026-11-14 10:37:07,752 | INFO | FIN | Cliente válido C1
-2026-11-14 10:37:07,752 | ERROR | ERROR | Correo inválido
+2026-11-14 16:29:42,422 | INFO | OK | Cliente válido C1
+2026-11-14 16:29:42,422 | INFO | FIN | Cliente válido C1
+2026-11-14 16:29:42,422 | ERROR | ERROR | Correo inválido
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 8, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 8, in <lambda>
     ('Correo inválido', lambda: sistema.registrar_cliente('C2', 'Cliente prueba', 'invalido', '3000000002'), False),  # Rechaza el correo.
-                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 71, in registrar_cliente
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 71, in registrar_cliente
     return self._agregar(self.__clientes, Cliente(*args, **kwargs))  # Construye primero y agrega solo si es válido.
-                                          ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 49, in __init__
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 49, in __init__
     self.actualizar_contacto(correo, telefono)  # Valida ambos contactos antes de guardarlos.
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 67, in actualizar_contacto
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 67, in actualizar_contacto
     raise ValidacionError('Correo: formato inválido.')  # No imprime el correo recibido.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.ValidacionError: Correo: formato inválido.
@@ -22,23 +21,22 @@ software_fj.errores.ValidacionError: Correo: formato inválido.
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Correo inválido.
-2026-11-14 10:37:07,753 | INFO | FIN | Correo inválido
-2026-11-14 10:37:07,753 | ERROR | ERROR | Cliente duplicado
+2026-11-14 16:29:42,423 | INFO | FIN | Correo inválido
+2026-11-14 16:29:42,423 | ERROR | ERROR | Cliente duplicado
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 9, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 9, in <lambda>
     ('Cliente duplicado', lambda: sistema.registrar_cliente('C1', 'Duplicado', 'dos@example.com', '3000000002'), False),  # Protege la identidad.
-                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 71, in registrar_cliente
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 71, in registrar_cliente
     return self._agregar(self.__clientes, Cliente(*args, **kwargs))  # Construye primero y agrega solo si es válido.
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 66, in _agregar
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 66, in _agregar
     raise DuplicadoError('Identificador ya registrado.')  # Mantiene intacta la colección.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.DuplicadoError: Identificador ya registrado.
@@ -46,54 +44,52 @@ software_fj.errores.DuplicadoError: Identificador ya registrado.
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Cliente duplicado.
-2026-11-14 10:37:07,753 | INFO | FIN | Cliente duplicado
-2026-11-14 10:37:07,753 | ERROR | ERROR | Parámetros faltantes
+2026-11-14 16:29:42,424 | INFO | FIN | Cliente duplicado
+2026-11-14 16:29:42,424 | ERROR | ERROR | Parámetros faltantes
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 10, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 10, in <lambda>
     ('Parámetros faltantes', lambda: sistema.registrar_cliente('C2', 'Incompleto'), False),  # Controla TypeError en la frontera.
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 71, in registrar_cliente
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 71, in registrar_cliente
     return self._agregar(self.__clientes, Cliente(*args, **kwargs))  # Construye primero y agrega solo si es válido.
-                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^
 TypeError: Cliente.__init__() missing 2 required positional arguments: 'correo' and 'telefono'
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Parámetros faltantes.
-2026-11-14 10:37:07,754 | INFO | FIN | Parámetros faltantes
-2026-11-14 10:37:07,754 | INFO | OK | Cliente válido C2
-2026-11-14 10:37:07,754 | INFO | FIN | Cliente válido C2
-2026-11-14 10:37:07,754 | INFO | OK | Crear sala S1
-2026-11-14 10:37:07,754 | INFO | FIN | Crear sala S1
-2026-11-14 10:37:07,754 | ERROR | ERROR | Servicio con tarifa negativa
+2026-11-14 16:29:42,424 | INFO | FIN | Parámetros faltantes
+2026-11-14 16:29:42,425 | INFO | OK | Cliente válido C2
+2026-11-14 16:29:42,425 | INFO | FIN | Cliente válido C2
+2026-11-14 16:29:42,425 | INFO | OK | Crear sala S1
+2026-11-14 16:29:42,425 | INFO | FIN | Crear sala S1
+2026-11-14 16:29:42,425 | ERROR | ERROR | Servicio con tarifa negativa
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 13, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 13, in <lambda>
     ('Servicio con tarifa negativa', lambda: sistema.registrar_servicio(Sala, 'S0', 'Inválida', -1, 12), False),  # Rechaza precios negativos.
-                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 76, in registrar_servicio
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 76, in registrar_servicio
     return self._agregar(self.__servicios, clase(*args, **kwargs))  # Deja que cada subclase valide sus parámetros.
-                                           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 126, in __init__
+                                           ~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 126, in __init__
     super().__init__(identificador, nombre, tarifa)  # Inicializa la parte heredada.
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 80, in __init__
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 80, in __init__
     self.__tarifa = numero(tarifa, 'Tarifa')  # Requiere una tarifa positiva y finita.
-                    ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 25, in numero
+                    ~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 25, in numero
     raise ValidacionError(f'{campo}: valor fuera del rango permitido.')  # Impide valores incoherentes.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.ValidacionError: Tarifa: valor fuera del rango permitido.
@@ -101,30 +97,29 @@ software_fj.errores.ValidacionError: Tarifa: valor fuera del rango permitido.
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Servicio con tarifa negativa.
-2026-11-14 10:37:07,754 | INFO | FIN | Servicio con tarifa negativa
-2026-11-14 10:37:07,754 | INFO | OK | Crear equipo E1
-2026-11-14 10:37:07,754 | INFO | FIN | Crear equipo E1
-2026-11-14 10:37:07,754 | INFO | OK | Crear asesoría A1
-2026-11-14 10:37:07,754 | INFO | FIN | Crear asesoría A1
-2026-11-14 10:37:07,754 | ERROR | ERROR | Servicio sin especialidad
+2026-11-14 16:29:42,425 | INFO | FIN | Servicio con tarifa negativa
+2026-11-14 16:29:42,425 | INFO | OK | Crear equipo E1
+2026-11-14 16:29:42,425 | INFO | FIN | Crear equipo E1
+2026-11-14 16:29:42,425 | INFO | OK | Crear asesoría A1
+2026-11-14 16:29:42,425 | INFO | FIN | Crear asesoría A1
+2026-11-14 16:29:42,425 | ERROR | ERROR | Servicio sin especialidad
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 16, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 16, in <lambda>
     ('Servicio sin especialidad', lambda: sistema.registrar_servicio(Asesoria, 'A0', 'Inválida', 80000, ''), False),  # Valida campos específicos.
-                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 76, in registrar_servicio
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 76, in registrar_servicio
     return self._agregar(self.__servicios, clase(*args, **kwargs))  # Deja que cada subclase valide sus parámetros.
-                                           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 159, in __init__
+                                           ~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 159, in __init__
     self.__especialidad = texto(especialidad, 'Especialidad')  # Exige un área identificable.
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 11, in texto
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 11, in texto
     raise ValidacionError(f'{campo}: texto obligatorio de 1 a {limite} caracteres.')  # Explica la regla sin revelar el dato.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.ValidacionError: Especialidad: texto obligatorio de 1 a 80 caracteres.
@@ -132,29 +127,28 @@ software_fj.errores.ValidacionError: Especialidad: texto obligatorio de 1 a 80 c
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Servicio sin especialidad.
-2026-11-14 10:37:07,755 | INFO | FIN | Servicio sin especialidad
-2026-11-14 10:37:07,755 | INFO | OK | Crear reserva R1
-2026-11-14 10:37:07,755 | INFO | FIN | Crear reserva R1
-2026-11-14 10:37:07,755 | INFO | OK | Confirmar R1 con impuesto y descuento
-2026-11-14 10:37:07,755 | INFO | FIN | Confirmar R1 con impuesto y descuento
-2026-11-14 10:37:07,755 | INFO | OK | Crear reserva competidora R2
-2026-11-14 10:37:07,755 | INFO | FIN | Crear reserva competidora R2
-2026-11-14 10:37:07,755 | ERROR | ERROR | Confirmar servicio ocupado
+2026-11-14 16:29:42,426 | INFO | FIN | Servicio sin especialidad
+2026-11-14 16:29:42,426 | INFO | OK | Crear reserva R1
+2026-11-14 16:29:42,426 | INFO | FIN | Crear reserva R1
+2026-11-14 16:29:42,426 | INFO | OK | Confirmar R1 con impuesto y descuento
+2026-11-14 16:29:42,426 | INFO | FIN | Confirmar R1 con impuesto y descuento
+2026-11-14 16:29:42,426 | INFO | OK | Crear reserva competidora R2
+2026-11-14 16:29:42,426 | INFO | FIN | Crear reserva competidora R2
+2026-11-14 16:29:42,426 | ERROR | ERROR | Confirmar servicio ocupado
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 20, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 20, in <lambda>
     ('Confirmar servicio ocupado', lambda: sistema.reserva('R2').confirmar(), False),  # Rechaza doble ocupación.
-                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 201, in confirmar
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 201, in confirmar
     self.__servicio.ocupar(self)  # Verifica disponibilidad al confirmar, no solo al crear.
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 97, in ocupar
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 97, in ocupar
     raise DisponibilidadError('Servicio ocupado por otra reserva.')  # Deja intacto al ocupante actual.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.DisponibilidadError: Servicio ocupado por otra reserva.
@@ -162,23 +156,21 @@ software_fj.errores.DisponibilidadError: Servicio ocupado por otra reserva.
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Confirmar servicio ocupado.
-2026-11-14 10:37:07,755 | INFO | FIN | Confirmar servicio ocupado
-2026-11-14 10:37:07,755 | ERROR | ERROR | Cliente inexistente
+2026-11-14 16:29:42,427 | INFO | FIN | Confirmar servicio ocupado
+2026-11-14 16:29:42,427 | ERROR | ERROR | Cliente inexistente
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 21, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 21, in <lambda>
     ('Cliente inexistente', lambda: sistema.crear_reserva('RX', 'C9', 'S1', 1), False),  # Evita referencias inexistentes.
-                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 79, in crear_reserva
+                                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 79, in crear_reserva
     cliente = self._buscar(self.__clientes, cliente_id)  # No acepta clientes sin registrar.
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 62, in _buscar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 62, in _buscar
     raise NoEncontradoError('Identificador no registrado en la colección solicitada.')  # No crea entidades implícitas.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.NoEncontradoError: Identificador no registrado en la colección solicitada.
@@ -186,29 +178,27 @@ software_fj.errores.NoEncontradoError: Identificador no registrado en la colecci
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Cliente inexistente.
-2026-11-14 10:37:07,755 | INFO | FIN | Cliente inexistente
-2026-11-14 10:37:07,755 | ERROR | ERROR | Duración inválida
+2026-11-14 16:29:42,427 | INFO | FIN | Cliente inexistente
+2026-11-14 16:29:42,427 | ERROR | ERROR | Duración inválida
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 22, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 22, in <lambda>
     ('Duración inválida', lambda: sistema.crear_reserva('RX', 'C1', 'E1', 0), False),  # Rechaza duración cero.
-                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 81, in crear_reserva
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 81, in crear_reserva
     return self._agregar(self.__reservas, Reserva(identificador, cliente, servicio, duracion))  # Inserta una reserva válida pendiente.
-                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 185, in __init__
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 185, in __init__
     self.__duracion = servicio.validar_parametros(duracion)  # Valida antes de crear el estado operativo.
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 147, in validar_parametros
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 147, in validar_parametros
     return numero(duracion, 'Horas de equipo', maximo=24)  # Limita el préstamo a veinticuatro horas.
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 25, in numero
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 25, in numero
     raise ValidacionError(f'{campo}: valor fuera del rango permitido.')  # Impide valores incoherentes.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.ValidacionError: Horas de equipo: valor fuera del rango permitido.
@@ -216,26 +206,25 @@ software_fj.errores.ValidacionError: Horas de equipo: valor fuera del rango perm
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Duración inválida.
-2026-11-14 10:37:07,756 | INFO | FIN | Duración inválida
-2026-11-14 10:37:07,756 | INFO | OK | Procesar R1
-2026-11-14 10:37:07,756 | INFO | FIN | Procesar R1
-2026-11-14 10:37:07,756 | INFO | OK | Confirmar R2 tras liberación
-2026-11-14 10:37:07,756 | INFO | FIN | Confirmar R2 tras liberación
-2026-11-14 10:37:07,756 | INFO | OK | Cancelar R2
-2026-11-14 10:37:07,756 | INFO | FIN | Cancelar R2
-2026-11-14 10:37:07,756 | ERROR | ERROR | Procesar reserva cancelada
+2026-11-14 16:29:42,428 | INFO | FIN | Duración inválida
+2026-11-14 16:29:42,428 | INFO | OK | Procesar R1
+2026-11-14 16:29:42,428 | INFO | FIN | Procesar R1
+2026-11-14 16:29:42,428 | INFO | OK | Confirmar R2 tras liberación
+2026-11-14 16:29:42,428 | INFO | FIN | Confirmar R2 tras liberación
+2026-11-14 16:29:42,428 | INFO | OK | Cancelar R2
+2026-11-14 16:29:42,428 | INFO | FIN | Cancelar R2
+2026-11-14 16:29:42,428 | ERROR | ERROR | Procesar reserva cancelada
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 26, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 26, in <lambda>
     ('Procesar reserva cancelada', lambda: sistema.reserva('R2').procesar(), False),  # Protege estados finales.
-                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 218, in procesar
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 218, in procesar
     raise EstadoError('Solo se puede procesar una reserva confirmada.')  # Evita cobros o procesos duplicados.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.EstadoError: Solo se puede procesar una reserva confirmada.
@@ -243,25 +232,24 @@ software_fj.errores.EstadoError: Solo se puede procesar una reserva confirmada.
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Procesar reserva cancelada.
-2026-11-14 10:37:07,756 | INFO | FIN | Procesar reserva cancelada
-2026-11-14 10:37:07,756 | INFO | OK | Crear reserva de equipo R3
-2026-11-14 10:37:07,756 | INFO | FIN | Crear reserva de equipo R3
-2026-11-14 10:37:07,756 | INFO | OK | Confirmar R3
-2026-11-14 10:37:07,756 | INFO | FIN | Confirmar R3
-2026-11-14 10:37:07,756 | INFO | OK | Procesar R3
-2026-11-14 10:37:07,756 | INFO | FIN | Procesar R3
-2026-11-14 10:37:07,756 | INFO | OK | Crear reserva de asesoría R4
-2026-11-14 10:37:07,756 | INFO | FIN | Crear reserva de asesoría R4
-2026-11-14 10:37:07,756 | ERROR | ERROR | Confirmar R4 con descuento inválido
+2026-11-14 16:29:42,428 | INFO | FIN | Procesar reserva cancelada
+2026-11-14 16:29:42,428 | INFO | OK | Crear reserva de equipo R3
+2026-11-14 16:29:42,428 | INFO | FIN | Crear reserva de equipo R3
+2026-11-14 16:29:42,428 | INFO | OK | Confirmar R3
+2026-11-14 16:29:42,428 | INFO | FIN | Confirmar R3
+2026-11-14 16:29:42,429 | INFO | OK | Procesar R3
+2026-11-14 16:29:42,429 | INFO | FIN | Procesar R3
+2026-11-14 16:29:42,429 | INFO | OK | Crear reserva de asesoría R4
+2026-11-14 16:29:42,429 | INFO | FIN | Crear reserva de asesoría R4
+2026-11-14 16:29:42,429 | ERROR | ERROR | Confirmar R4 con descuento inválido
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 117, in calcular_costo
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 117, in calcular_costo
     rebaja = numero(descuento, 'Descuento', maximo=1, incluir_minimo=True)  # Admite descuentos de 0 a 100 por ciento.
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 25, in numero
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 25, in numero
     raise ValidacionError(f'{campo}: valor fuera del rango permitido.')  # Impide valores incoherentes.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.ValidacionError: Descuento: valor fuera del rango permitido.
@@ -269,16 +257,14 @@ software_fj.errores.ValidacionError: Descuento: valor fuera del rango permitido.
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 31, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 31, in <lambda>
     ('Confirmar R4 con descuento inválido', lambda: sistema.reserva('R4').confirmar(descuento='1.20'), False),  # No ocupa la asesoría si falla el cálculo.
-                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 200, in confirmar
+                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 200, in confirmar
     total = self.__servicio.calcular_costo(self.__duracion, impuesto, descuento)  # Calcula todas las variantes.
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 121, in calcular_costo
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 121, in calcular_costo
     raise CalculoError('No se pudo calcular el costo del servicio.') from causa  # Agrega contexto sin perder la causa.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.CalculoError: No se pudo calcular el costo del servicio.
@@ -286,43 +272,42 @@ software_fj.errores.CalculoError: No se pudo calcular el costo del servicio.
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.OperacionError: No se completó: Confirmar R4 con descuento inválido.
-2026-11-14 10:37:07,756 | INFO | FIN | Confirmar R4 con descuento inválido
-2026-11-14 10:37:07,756 | INFO | OK | Confirmar R4 después del error
-2026-11-14 10:37:07,756 | INFO | FIN | Confirmar R4 después del error
-2026-11-14 10:37:07,756 | INFO | OK | Procesar R4
-2026-11-14 10:37:07,756 | INFO | FIN | Procesar R4
-2026-11-14 10:37:07,757 | ERROR | ERROR INESPERADO | Falla inesperada controlada
+2026-11-14 16:29:42,429 | INFO | FIN | Confirmar R4 con descuento inválido
+2026-11-14 16:29:42,429 | INFO | OK | Confirmar R4 después del error
+2026-11-14 16:29:42,429 | INFO | FIN | Confirmar R4 después del error
+2026-11-14 16:29:42,429 | INFO | OK | Procesar R4
+2026-11-14 16:29:42,429 | INFO | FIN | Procesar R4
+2026-11-14 16:29:42,429 | ERROR | ERROR INESPERADO | Falla inesperada controlada
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/demo.py", line 34, in <lambda>
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 34, in <lambda>
     ('Falla inesperada controlada', lambda: 1 / 0, False),  # Inyecta una falla aritmética para comprobar la última frontera.
                                             ~~^~~
 ZeroDivisionError: division by zero
-2026-11-14 10:37:07,757 | INFO | FIN | Falla inesperada controlada
-2026-11-14 10:37:07,757 | INFO | OK | Consulta final tras los errores
-2026-11-14 10:37:07,757 | INFO | FIN | Consulta final tras los errores
-2026-11-14 10:37:42,274 | WARNING | ERROR | opción de menú inválida
-2026-11-14 10:37:42,274 | ERROR | ERROR | Opción 1
+2026-11-14 16:29:42,430 | INFO | FIN | Falla inesperada controlada
+2026-11-14 16:29:42,430 | INFO | OK | Consulta final tras los errores
+2026-11-14 16:29:42,430 | INFO | FIN | Consulta final tras los errores
+2026-11-14 16:44:48,144 | INFO | OK | Cliente válido C1
+2026-11-14 16:44:48,145 | INFO | FIN | Cliente válido C1
+2026-11-14 16:44:48,145 | ERROR | ERROR | Correo inválido
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/main.py", line 11, in cliente
-    return sistema.registrar_cliente(input('ID: '), input('Nombre: '), input('Correo: '), input('Teléfono: '))  # Valida los datos en el modelo.
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 71, in registrar_cliente
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 8, in <lambda>
+    ('Correo inválido', lambda: sistema.registrar_cliente('C2', 'Cliente prueba', 'invalido', '3000000002'), False),  # Rechaza el correo.
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 71, in registrar_cliente
     return self._agregar(self.__clientes, Cliente(*args, **kwargs))  # Construye primero y agrega solo si es válido.
-                                          ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 49, in __init__
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 49, in __init__
     self.actualizar_contacto(correo, telefono)  # Valida ambos contactos antes de guardarlos.
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/modelos.py", line 67, in actualizar_contacto
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 67, in actualizar_contacto
     raise ValidacionError('Correo: formato inválido.')  # No imprime el correo recibido.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 software_fj.errores.ValidacionError: Correo: formato inválido.
@@ -330,39 +315,568 @@ software_fj.errores.ValidacionError: Correo: formato inválido.
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-software_fj.errores.OperacionError: No se completó: Opción 1.
-2026-11-14 10:37:42,275 | INFO | FIN | Opción 1
-2026-11-14 10:37:42,276 | INFO | OK | Opción 1
-2026-11-14 10:37:42,276 | INFO | FIN | Opción 1
-2026-11-14 10:37:42,276 | ERROR | ERROR | Opción 2
+software_fj.errores.OperacionError: No se completó: Correo inválido.
+2026-11-14 16:44:48,146 | INFO | FIN | Correo inválido
+2026-11-14 16:44:48,146 | ERROR | ERROR | Cliente duplicado
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 89, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
     valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/main.py", line 19, in servicio
-    return sistema.registrar_servicio(Sala, *datos, int(input('Capacidad: ')))  # Controla la conversión en ejecutar.
-                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: invalid literal for int() with base 10: 'diez'
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 9, in <lambda>
+    ('Cliente duplicado', lambda: sistema.registrar_cliente('C1', 'Duplicado', 'dos@example.com', '3000000002'), False),  # Protege la identidad.
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 71, in registrar_cliente
+    return self._agregar(self.__clientes, Cliente(*args, **kwargs))  # Construye primero y agrega solo si es válido.
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 66, in _agregar
+    raise DuplicadoError('Identificador ya registrado.')  # Mantiene intacta la colección.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.DuplicadoError: Identificador ya registrado.
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/workspace/scratch/6848258da0da/output/Software_FJ/software_fj/gestion.py", line 91, in ejecutar
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
     raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-software_fj.errores.OperacionError: No se completó: Opción 2.
-2026-11-14 10:37:42,276 | INFO | FIN | Opción 2
-2026-11-14 10:37:42,276 | INFO | OK | Opción 2
-2026-11-14 10:37:42,276 | INFO | FIN | Opción 2
-2026-11-14 10:37:42,276 | INFO | OK | Opción 3
-2026-11-14 10:37:42,276 | INFO | FIN | Opción 3
-2026-11-14 10:37:42,276 | INFO | OK | Opción 4
-2026-11-14 10:37:42,276 | INFO | FIN | Opción 4
-2026-11-14 10:37:42,276 | INFO | OK | Opción 5
-2026-11-14 10:37:42,276 | INFO | FIN | Opción 5
-2026-11-14 10:37:42,276 | INFO | OK | Opción 7
-2026-11-14 10:37:42,276 | INFO | FIN | Opción 7
-2026-11-14 10:37:42,276 | INFO | CIERRE | salida solicitada
+software_fj.errores.OperacionError: No se completó: Cliente duplicado.
+2026-11-14 16:44:48,147 | INFO | FIN | Cliente duplicado
+2026-11-14 16:44:48,147 | ERROR | ERROR | Parámetros faltantes
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 10, in <lambda>
+    ('Parámetros faltantes', lambda: sistema.registrar_cliente('C2', 'Incompleto'), False),  # Controla TypeError en la frontera.
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 71, in registrar_cliente
+    return self._agregar(self.__clientes, Cliente(*args, **kwargs))  # Construye primero y agrega solo si es válido.
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^
+TypeError: Cliente.__init__() missing 2 required positional arguments: 'correo' and 'telefono'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Parámetros faltantes.
+2026-11-14 16:44:48,147 | INFO | FIN | Parámetros faltantes
+2026-11-14 16:44:48,147 | INFO | OK | Cliente válido C2
+2026-11-14 16:44:48,147 | INFO | FIN | Cliente válido C2
+2026-11-14 16:44:48,148 | INFO | OK | Crear sala S1
+2026-11-14 16:44:48,148 | INFO | FIN | Crear sala S1
+2026-11-14 16:44:48,148 | ERROR | ERROR | Servicio con tarifa negativa
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 13, in <lambda>
+    ('Servicio con tarifa negativa', lambda: sistema.registrar_servicio(Sala, 'S0', 'Inválida', -1, 12), False),  # Rechaza precios negativos.
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 76, in registrar_servicio
+    return self._agregar(self.__servicios, clase(*args, **kwargs))  # Deja que cada subclase valide sus parámetros.
+                                           ~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 126, in __init__
+    super().__init__(identificador, nombre, tarifa)  # Inicializa la parte heredada.
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 80, in __init__
+    self.__tarifa = numero(tarifa, 'Tarifa')  # Requiere una tarifa positiva y finita.
+                    ~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 25, in numero
+    raise ValidacionError(f'{campo}: valor fuera del rango permitido.')  # Impide valores incoherentes.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.ValidacionError: Tarifa: valor fuera del rango permitido.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Servicio con tarifa negativa.
+2026-11-14 16:44:48,148 | INFO | FIN | Servicio con tarifa negativa
+2026-11-14 16:44:48,148 | INFO | OK | Crear equipo E1
+2026-11-14 16:44:48,148 | INFO | FIN | Crear equipo E1
+2026-11-14 16:44:48,148 | INFO | OK | Crear asesoría A1
+2026-11-14 16:44:48,148 | INFO | FIN | Crear asesoría A1
+2026-11-14 16:44:48,148 | ERROR | ERROR | Servicio sin especialidad
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 16, in <lambda>
+    ('Servicio sin especialidad', lambda: sistema.registrar_servicio(Asesoria, 'A0', 'Inválida', 80000, ''), False),  # Valida campos específicos.
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 76, in registrar_servicio
+    return self._agregar(self.__servicios, clase(*args, **kwargs))  # Deja que cada subclase valide sus parámetros.
+                                           ~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 159, in __init__
+    self.__especialidad = texto(especialidad, 'Especialidad')  # Exige un área identificable.
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 11, in texto
+    raise ValidacionError(f'{campo}: texto obligatorio de 1 a {limite} caracteres.')  # Explica la regla sin revelar el dato.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.ValidacionError: Especialidad: texto obligatorio de 1 a 80 caracteres.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Servicio sin especialidad.
+2026-11-14 16:44:48,149 | INFO | FIN | Servicio sin especialidad
+2026-11-14 16:44:48,149 | INFO | OK | Crear reserva R1
+2026-11-14 16:44:48,149 | INFO | FIN | Crear reserva R1
+2026-11-14 16:44:48,149 | INFO | OK | Confirmar R1 con impuesto y descuento
+2026-11-14 16:44:48,149 | INFO | FIN | Confirmar R1 con impuesto y descuento
+2026-11-14 16:44:48,149 | INFO | OK | Crear reserva competidora R2
+2026-11-14 16:44:48,149 | INFO | FIN | Crear reserva competidora R2
+2026-11-14 16:44:48,149 | ERROR | ERROR | Confirmar servicio ocupado
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 20, in <lambda>
+    ('Confirmar servicio ocupado', lambda: sistema.reserva('R2').confirmar(), False),  # Rechaza doble ocupación.
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 201, in confirmar
+    self.__servicio.ocupar(self)  # Verifica disponibilidad al confirmar, no solo al crear.
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 97, in ocupar
+    raise DisponibilidadError('Servicio ocupado por otra reserva.')  # Deja intacto al ocupante actual.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.DisponibilidadError: Servicio ocupado por otra reserva.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Confirmar servicio ocupado.
+2026-11-14 16:44:48,150 | INFO | FIN | Confirmar servicio ocupado
+2026-11-14 16:44:48,150 | ERROR | ERROR | Cliente inexistente
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 21, in <lambda>
+    ('Cliente inexistente', lambda: sistema.crear_reserva('RX', 'C9', 'S1', 1), False),  # Evita referencias inexistentes.
+                                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 79, in crear_reserva
+    cliente = self._buscar(self.__clientes, cliente_id)  # No acepta clientes sin registrar.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 62, in _buscar
+    raise NoEncontradoError('Identificador no registrado en la colección solicitada.')  # No crea entidades implícitas.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.NoEncontradoError: Identificador no registrado en la colección solicitada.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Cliente inexistente.
+2026-11-14 16:44:48,150 | INFO | FIN | Cliente inexistente
+2026-11-14 16:44:48,150 | ERROR | ERROR | Duración inválida
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 22, in <lambda>
+    ('Duración inválida', lambda: sistema.crear_reserva('RX', 'C1', 'E1', 0), False),  # Rechaza duración cero.
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 81, in crear_reserva
+    return self._agregar(self.__reservas, Reserva(identificador, cliente, servicio, duracion))  # Inserta una reserva válida pendiente.
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 185, in __init__
+    self.__duracion = servicio.validar_parametros(duracion)  # Valida antes de crear el estado operativo.
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 147, in validar_parametros
+    return numero(duracion, 'Horas de equipo', maximo=24)  # Limita el préstamo a veinticuatro horas.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 25, in numero
+    raise ValidacionError(f'{campo}: valor fuera del rango permitido.')  # Impide valores incoherentes.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.ValidacionError: Horas de equipo: valor fuera del rango permitido.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Duración inválida.
+2026-11-14 16:44:48,151 | INFO | FIN | Duración inválida
+2026-11-14 16:44:48,151 | INFO | OK | Procesar R1
+2026-11-14 16:44:48,151 | INFO | FIN | Procesar R1
+2026-11-14 16:44:48,151 | INFO | OK | Confirmar R2 tras liberación
+2026-11-14 16:44:48,151 | INFO | FIN | Confirmar R2 tras liberación
+2026-11-14 16:44:48,151 | INFO | OK | Cancelar R2
+2026-11-14 16:44:48,151 | INFO | FIN | Cancelar R2
+2026-11-14 16:44:48,151 | ERROR | ERROR | Procesar reserva cancelada
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 26, in <lambda>
+    ('Procesar reserva cancelada', lambda: sistema.reserva('R2').procesar(), False),  # Protege estados finales.
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 218, in procesar
+    raise EstadoError('Solo se puede procesar una reserva confirmada.')  # Evita cobros o procesos duplicados.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.EstadoError: Solo se puede procesar una reserva confirmada.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Procesar reserva cancelada.
+2026-11-14 16:44:48,151 | INFO | FIN | Procesar reserva cancelada
+2026-11-14 16:44:48,151 | INFO | OK | Crear reserva de equipo R3
+2026-11-14 16:44:48,151 | INFO | FIN | Crear reserva de equipo R3
+2026-11-14 16:44:48,152 | INFO | OK | Confirmar R3
+2026-11-14 16:44:48,152 | INFO | FIN | Confirmar R3
+2026-11-14 16:44:48,152 | INFO | OK | Procesar R3
+2026-11-14 16:44:48,152 | INFO | FIN | Procesar R3
+2026-11-14 16:44:48,152 | INFO | OK | Crear reserva de asesoría R4
+2026-11-14 16:44:48,152 | INFO | FIN | Crear reserva de asesoría R4
+2026-11-14 16:44:48,152 | ERROR | ERROR | Confirmar R4 con descuento inválido
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 117, in calcular_costo
+    rebaja = numero(descuento, 'Descuento', maximo=1, incluir_minimo=True)  # Admite descuentos de 0 a 100 por ciento.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 25, in numero
+    raise ValidacionError(f'{campo}: valor fuera del rango permitido.')  # Impide valores incoherentes.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.ValidacionError: Descuento: valor fuera del rango permitido.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 31, in <lambda>
+    ('Confirmar R4 con descuento inválido', lambda: sistema.reserva('R4').confirmar(descuento='1.20'), False),  # No ocupa la asesoría si falla el cálculo.
+                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 200, in confirmar
+    total = self.__servicio.calcular_costo(self.__duracion, impuesto, descuento)  # Calcula todas las variantes.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/modelos.py", line 121, in calcular_costo
+    raise CalculoError('No se pudo calcular el costo del servicio.') from causa  # Agrega contexto sin perder la causa.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.CalculoError: No se pudo calcular el costo del servicio.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Confirmar R4 con descuento inválido.
+2026-11-14 16:44:48,152 | INFO | FIN | Confirmar R4 con descuento inválido
+2026-11-14 16:44:48,152 | INFO | OK | Confirmar R4 después del error
+2026-11-14 16:44:48,152 | INFO | FIN | Confirmar R4 después del error
+2026-11-14 16:44:48,152 | INFO | OK | Procesar R4
+2026-11-14 16:44:48,152 | INFO | FIN | Procesar R4
+2026-11-14 16:44:48,152 | ERROR | ERROR INESPERADO | Falla inesperada controlada
+Traceback (most recent call last):
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/entrega_actualizada/proyecto/software_fj/demo.py", line 34, in <lambda>
+    ('Falla inesperada controlada', lambda: 1 / 0, False),  # Inyecta una falla aritmética para comprobar la última frontera.
+                                            ~~^~~
+ZeroDivisionError: division by zero
+2026-11-14 16:44:48,153 | INFO | FIN | Falla inesperada controlada
+2026-11-14 16:44:48,153 | INFO | OK | Consulta final tras los errores
+2026-11-14 16:44:48,153 | INFO | FIN | Consulta final tras los errores
+2026-11-14 16:50:12,411 | INFO | OK | Cliente válido C1
+2026-11-14 16:50:12,411 | INFO | FIN | Cliente válido C1
+2026-11-14 16:50:12,411 | ERROR | ERROR | Correo inválido
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 8, in <lambda>
+    ('Correo inválido', lambda: sistema.registrar_cliente('C2', 'Cliente prueba', 'invalido', '3000000002'), False),  # Rechaza el correo.
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 71, in registrar_cliente
+    return self._agregar(self.__clientes, Cliente(*args, **kwargs))  # Construye primero y agrega solo si es válido.
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 49, in __init__
+    self.actualizar_contacto(correo, telefono)  # Valida ambos contactos antes de guardarlos.
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 67, in actualizar_contacto
+    raise ValidacionError('Correo: formato inválido.')  # No imprime el correo recibido.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.ValidacionError: Correo: formato inválido.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Correo inválido.
+2026-11-14 16:50:12,412 | INFO | FIN | Correo inválido
+2026-11-14 16:50:12,412 | ERROR | ERROR | Cliente duplicado
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 9, in <lambda>
+    ('Cliente duplicado', lambda: sistema.registrar_cliente('C1', 'Duplicado', 'dos@example.com', '3000000002'), False),  # Protege la identidad.
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 71, in registrar_cliente
+    return self._agregar(self.__clientes, Cliente(*args, **kwargs))  # Construye primero y agrega solo si es válido.
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 66, in _agregar
+    raise DuplicadoError('Identificador ya registrado.')  # Mantiene intacta la colección.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.DuplicadoError: Identificador ya registrado.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Cliente duplicado.
+2026-11-14 16:50:12,413 | INFO | FIN | Cliente duplicado
+2026-11-14 16:50:12,413 | ERROR | ERROR | Parámetros faltantes
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 10, in <lambda>
+    ('Parámetros faltantes', lambda: sistema.registrar_cliente('C2', 'Incompleto'), False),  # Controla TypeError en la frontera.
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 71, in registrar_cliente
+    return self._agregar(self.__clientes, Cliente(*args, **kwargs))  # Construye primero y agrega solo si es válido.
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^
+TypeError: Cliente.__init__() missing 2 required positional arguments: 'correo' and 'telefono'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Parámetros faltantes.
+2026-11-14 16:50:12,413 | INFO | FIN | Parámetros faltantes
+2026-11-14 16:50:12,413 | INFO | OK | Cliente válido C2
+2026-11-14 16:50:12,413 | INFO | FIN | Cliente válido C2
+2026-11-14 16:50:12,413 | INFO | OK | Crear sala S1
+2026-11-14 16:50:12,413 | INFO | FIN | Crear sala S1
+2026-11-14 16:50:12,413 | ERROR | ERROR | Servicio con tarifa negativa
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 13, in <lambda>
+    ('Servicio con tarifa negativa', lambda: sistema.registrar_servicio(Sala, 'S0', 'Inválida', -1, 12), False),  # Rechaza precios negativos.
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 76, in registrar_servicio
+    return self._agregar(self.__servicios, clase(*args, **kwargs))  # Deja que cada subclase valide sus parámetros.
+                                           ~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 126, in __init__
+    super().__init__(identificador, nombre, tarifa)  # Inicializa la parte heredada.
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 80, in __init__
+    self.__tarifa = numero(tarifa, 'Tarifa')  # Requiere una tarifa positiva y finita.
+                    ~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 25, in numero
+    raise ValidacionError(f'{campo}: valor fuera del rango permitido.')  # Impide valores incoherentes.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.ValidacionError: Tarifa: valor fuera del rango permitido.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Servicio con tarifa negativa.
+2026-11-14 16:50:12,414 | INFO | FIN | Servicio con tarifa negativa
+2026-11-14 16:50:12,414 | INFO | OK | Crear equipo E1
+2026-11-14 16:50:12,414 | INFO | FIN | Crear equipo E1
+2026-11-14 16:50:12,414 | INFO | OK | Crear asesoría A1
+2026-11-14 16:50:12,414 | INFO | FIN | Crear asesoría A1
+2026-11-14 16:50:12,414 | ERROR | ERROR | Servicio sin especialidad
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 16, in <lambda>
+    ('Servicio sin especialidad', lambda: sistema.registrar_servicio(Asesoria, 'A0', 'Inválida', 80000, ''), False),  # Valida campos específicos.
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 76, in registrar_servicio
+    return self._agregar(self.__servicios, clase(*args, **kwargs))  # Deja que cada subclase valide sus parámetros.
+                                           ~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 159, in __init__
+    self.__especialidad = texto(especialidad, 'Especialidad')  # Exige un área identificable.
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 11, in texto
+    raise ValidacionError(f'{campo}: texto obligatorio de 1 a {limite} caracteres.')  # Explica la regla sin revelar el dato.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.ValidacionError: Especialidad: texto obligatorio de 1 a 80 caracteres.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Servicio sin especialidad.
+2026-11-14 16:50:12,415 | INFO | FIN | Servicio sin especialidad
+2026-11-14 16:50:12,415 | INFO | OK | Crear reserva R1
+2026-11-14 16:50:12,415 | INFO | FIN | Crear reserva R1
+2026-11-14 16:50:12,415 | INFO | OK | Confirmar R1 con impuesto y descuento
+2026-11-14 16:50:12,415 | INFO | FIN | Confirmar R1 con impuesto y descuento
+2026-11-14 16:50:12,415 | INFO | OK | Crear reserva competidora R2
+2026-11-14 16:50:12,415 | INFO | FIN | Crear reserva competidora R2
+2026-11-14 16:50:12,415 | ERROR | ERROR | Confirmar servicio ocupado
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 20, in <lambda>
+    ('Confirmar servicio ocupado', lambda: sistema.reserva('R2').confirmar(), False),  # Rechaza doble ocupación.
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 201, in confirmar
+    self.__servicio.ocupar(self)  # Verifica disponibilidad al confirmar, no solo al crear.
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 97, in ocupar
+    raise DisponibilidadError('Servicio ocupado por otra reserva.')  # Deja intacto al ocupante actual.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.DisponibilidadError: Servicio ocupado por otra reserva.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Confirmar servicio ocupado.
+2026-11-14 16:50:12,415 | INFO | FIN | Confirmar servicio ocupado
+2026-11-14 16:50:12,415 | ERROR | ERROR | Cliente inexistente
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 21, in <lambda>
+    ('Cliente inexistente', lambda: sistema.crear_reserva('RX', 'C9', 'S1', 1), False),  # Evita referencias inexistentes.
+                                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 79, in crear_reserva
+    cliente = self._buscar(self.__clientes, cliente_id)  # No acepta clientes sin registrar.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 62, in _buscar
+    raise NoEncontradoError('Identificador no registrado en la colección solicitada.')  # No crea entidades implícitas.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.NoEncontradoError: Identificador no registrado en la colección solicitada.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Cliente inexistente.
+2026-11-14 16:50:12,416 | INFO | FIN | Cliente inexistente
+2026-11-14 16:50:12,416 | ERROR | ERROR | Duración inválida
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 22, in <lambda>
+    ('Duración inválida', lambda: sistema.crear_reserva('RX', 'C1', 'E1', 0), False),  # Rechaza duración cero.
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 81, in crear_reserva
+    return self._agregar(self.__reservas, Reserva(identificador, cliente, servicio, duracion))  # Inserta una reserva válida pendiente.
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 185, in __init__
+    self.__duracion = servicio.validar_parametros(duracion)  # Valida antes de crear el estado operativo.
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 147, in validar_parametros
+    return numero(duracion, 'Horas de equipo', maximo=24)  # Limita el préstamo a veinticuatro horas.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 25, in numero
+    raise ValidacionError(f'{campo}: valor fuera del rango permitido.')  # Impide valores incoherentes.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.ValidacionError: Horas de equipo: valor fuera del rango permitido.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Duración inválida.
+2026-11-14 16:50:12,416 | INFO | FIN | Duración inválida
+2026-11-14 16:50:12,416 | INFO | OK | Procesar R1
+2026-11-14 16:50:12,416 | INFO | FIN | Procesar R1
+2026-11-14 16:50:12,416 | INFO | OK | Confirmar R2 tras liberación
+2026-11-14 16:50:12,416 | INFO | FIN | Confirmar R2 tras liberación
+2026-11-14 16:50:12,416 | INFO | OK | Cancelar R2
+2026-11-14 16:50:12,416 | INFO | FIN | Cancelar R2
+2026-11-14 16:50:12,416 | ERROR | ERROR | Procesar reserva cancelada
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 26, in <lambda>
+    ('Procesar reserva cancelada', lambda: sistema.reserva('R2').procesar(), False),  # Protege estados finales.
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 218, in procesar
+    raise EstadoError('Solo se puede procesar una reserva confirmada.')  # Evita cobros o procesos duplicados.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.EstadoError: Solo se puede procesar una reserva confirmada.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Procesar reserva cancelada.
+2026-11-14 16:50:12,417 | INFO | FIN | Procesar reserva cancelada
+2026-11-14 16:50:12,417 | INFO | OK | Crear reserva de equipo R3
+2026-11-14 16:50:12,417 | INFO | FIN | Crear reserva de equipo R3
+2026-11-14 16:50:12,417 | INFO | OK | Confirmar R3
+2026-11-14 16:50:12,417 | INFO | FIN | Confirmar R3
+2026-11-14 16:50:12,417 | INFO | OK | Procesar R3
+2026-11-14 16:50:12,417 | INFO | FIN | Procesar R3
+2026-11-14 16:50:12,417 | INFO | OK | Crear reserva de asesoría R4
+2026-11-14 16:50:12,417 | INFO | FIN | Crear reserva de asesoría R4
+2026-11-14 16:50:12,417 | ERROR | ERROR | Confirmar R4 con descuento inválido
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 117, in calcular_costo
+    rebaja = numero(descuento, 'Descuento', maximo=1, incluir_minimo=True)  # Admite descuentos de 0 a 100 por ciento.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 25, in numero
+    raise ValidacionError(f'{campo}: valor fuera del rango permitido.')  # Impide valores incoherentes.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.ValidacionError: Descuento: valor fuera del rango permitido.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 31, in <lambda>
+    ('Confirmar R4 con descuento inválido', lambda: sistema.reserva('R4').confirmar(descuento='1.20'), False),  # No ocupa la asesoría si falla el cálculo.
+                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 200, in confirmar
+    total = self.__servicio.calcular_costo(self.__duracion, impuesto, descuento)  # Calcula todas las variantes.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/modelos.py", line 121, in calcular_costo
+    raise CalculoError('No se pudo calcular el costo del servicio.') from causa  # Agrega contexto sin perder la causa.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.CalculoError: No se pudo calcular el costo del servicio.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 91, in ejecutar
+    raise OperacionError(f'No se completó: {etiqueta}.') from causa  # Conserva el encadenamiento en la traza.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+software_fj.errores.OperacionError: No se completó: Confirmar R4 con descuento inválido.
+2026-11-14 16:50:12,418 | INFO | FIN | Confirmar R4 con descuento inválido
+2026-11-14 16:50:12,418 | INFO | OK | Confirmar R4 después del error
+2026-11-14 16:50:12,418 | INFO | FIN | Confirmar R4 después del error
+2026-11-14 16:50:12,418 | INFO | OK | Procesar R4
+2026-11-14 16:50:12,418 | INFO | FIN | Procesar R4
+2026-11-14 16:50:12,418 | ERROR | ERROR INESPERADO | Falla inesperada controlada
+Traceback (most recent call last):
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/gestion.py", line 89, in ejecutar
+    valor = funcion(*args, **kwargs)  # Incluye lectura y conversión de datos cuando se usa desde el menú.
+  File "/mnt/data/FASE4_ENTREGA_DEFINITIVA/proyecto/software_fj/demo.py", line 34, in <lambda>
+    ('Falla inesperada controlada', lambda: 1 / 0, False),  # Inyecta una falla aritmética para comprobar la última frontera.
+                                            ~~^~~
+ZeroDivisionError: division by zero
+2026-11-14 16:50:12,418 | INFO | FIN | Falla inesperada controlada
+2026-11-14 16:50:12,418 | INFO | OK | Consulta final tras los errores
+2026-11-14 16:50:12,418 | INFO | FIN | Consulta final tras los errores
